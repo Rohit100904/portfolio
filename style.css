@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: url('https://i.pinimg.com/1200x/a6/71/36/a671366d5227cbc987fdfd9658695172.jpg') no-repeat center center fixed;
+  background: url("https://i.pinimg.com/1200x/a6/71/36/a671366d5227cbc987fdfd9658695172.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #f0f0f0;
   line-height: 1.6;
@@ -70,12 +70,12 @@ header {
 }
 
 .profile-img {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #1abc9c;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.6);
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
 }
 
 .tagline {
@@ -92,9 +92,10 @@ section {
   padding: 40px 20px;
 }
 
+/* Projects Section */
 #projects .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
@@ -147,11 +148,13 @@ footer {
     display: none;
     flex-direction: column;
     background: rgba(17,17,17,0.95);
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 5px;
+    position: fixed;
+    top: 60px; /* below navbar */
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 0 0 10px;
+    box-shadow: -4px 4px 8px rgba(0,0,0,0.4);
   }
 
   .nav-links.active {
