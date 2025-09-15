@@ -142,19 +142,20 @@ footer {
   color: #aaa;
 }
 
-/* Responsive Navbar */
+/* Hamburger - only mobile adjustments */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: rgba(17,17,17,0.95);
-    position: fixed;
-    top: 60px; /* below navbar */
+    position: fixed;       /* fixed so it doesn’t drop down */
+    top: 60px;             /* below the navbar */
     right: 0;
     width: 200px;
+    background: rgba(17,17,17,0.95);
     padding: 20px;
     border-radius: 0 0 0 10px;
     box-shadow: -4px 4px 8px rgba(0,0,0,0.4);
+    z-index: 1000;
   }
 
   .nav-links.active {
@@ -163,5 +164,15 @@ footer {
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
   }
 }
+
