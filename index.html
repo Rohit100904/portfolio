@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Navbar at the very top -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Swastik Saha</div>
     <ul class="nav-links" id="nav-links">
@@ -16,6 +16,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="hamburger" id="hamburger">
       <span></span>
@@ -28,7 +29,7 @@
   <header>
     <img src="1000151996.png" alt="Swastik Saha" class="profile-img">
     <h1>Swastik Saha</h1>
-    <p>Machine Learning Developer | Python | C | Computer Vision | HTML | CSS | Java | Robotics | AutoCAD</p>
+    <p class="tagline">Machine Learning Developer | Python | C | Computer Vision | HTML | CSS | Java | Robotics | AutoCAD</p>
     
     <div class="header-contact">
       <p>Email: <a href="mailto:swastiksaha@example.com">swastiksaha@example.com</a></p>
@@ -41,27 +42,36 @@
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <div class="project-info">
+    <div class="projects-container">
+      <div class="project-card">
         <h3>Movie Recommender System</h3>
-        <p>Content-based movie recommendation system with interactive Streamlit UI.</p>
-        <a href="https://github.com/Rohit100904/movie-recommendation-system" target="_blank">GitHub Repo</a> |
+        <p>Built a content-based movie recommendation model using TF-IDF and cosine similarity. Deployed with Streamlit to provide an interactive UI for suggesting movies based on user input.</p>
+        <a href="https://github.com/Rohit100904/movie-recommendation-system" target="_blank">GitHub Repo</a>
       </div>
-    </div>
-    <div class="project">
-      <img src="images/sentiment-analysis.png" alt="Sentiment Analysis Screenshot">
-      <div class="project-info">
+      <div class="project-card">
         <h3>Disease Predictor</h3>
-        <a href="https://github.com/swastiksaha/sentiment-analysis-app" target="_blank">GitHub Repo</a> |
-        <a href="#" target="_blank">Live Demo</a>
+        <p>Developed a machine learning model using Decision Tree, Random Forest, and Naïve Bayes to predict diseases based on three user-input symptoms. Integrated with a HTML/CSS/JS frontend for a simple and interactive user experience.</p>
+        <a href="https://github.com/Rohit100904/diseasepredictor" target="_blank">GitHub Repo</a>
       </div>
-    </div>
-    <div class="project">
-      <img src="images/stock-predictor.png" alt="Stock Predictor Screenshot">
-      <div class="project-info">
-        <h3>Stock Price Predictor</h3>
-        <p>Predicts stock prices using regression models and visualizations.</p>
-        <a href="https://github.com/swastiksaha/stock-price-predictor" target="_blank">GitHub Repo</a>
+      <div class="project-card">
+        <h3>Virtual Personal Computer Assistant</h3>
+        <p>Built an intelligent desktop assistant that uses voice recognition to take spoken commands and perform tasks such as opening applications, browsing the web, searching information, and automating system operations. Integrated with speech-to-text and text-to-speech for a hands-free user experience.</p>
+        <a href="https://github.com/Rohit100904/MegaAI" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Virtual Computer System</h3>
+        <p>Virtual Computer System helps control mouse, keyboard, system audio, and Zoom functions via hand gestures.</p>
+        <a href="https://github.com/Rohit100904/virtual-computer-system" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Line Follower Robot</h3>
+        <p>Designed and built an autonomous robot using IR sensors and Arduino to detect and follow paths. Demonstrated practical applications of embedded systems, robotics, and automation.</p>
+        <a href="https://github.com/Rohit100904/line-following-robot" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Edge and Obstacle Detection Robot</h3>
+        <p>Hybrid Line Follower & Obstacle Avoidance Robot – Built an Arduino-powered robot using IR sensors, ultrasonic sensor, and servo motor for autonomous path following and obstacle avoidance. Demonstrated skills in robotics, sensor integration, and real-time control systems.</p>
+        <a href="https://github.com/Rohit100904/edge-and-obstacle" target="_blank">GitHub Repo</a>
       </div>
     </div>
   </section>
@@ -69,32 +79,62 @@
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Python, Pandas, NumPy</li>
-      <li>scikit-learn, TensorFlow, PyTorch</li>
-      <li>Streamlit, Flask, Web Deployment</li>
-      <li>NLP, Computer Vision, Data Visualization</li>
-      <li>Git, GitHub, Jupyter Notebook</li>
-    </ul>
+    <div class="single-card">
+      <ul>
+        <li>Python, Pandas, NumPy, Pickle</li>
+        <li>scikit-learn, TensorFlow, PyTorch, OpenCV</li>
+        <li>Streamlit, Flask, Django, Web Deployment</li>
+        <li>NLP, Computer Vision, Data Visualization</li>
+        <li>Git, GitHub, Jupyter Notebook, ArduinoIDE</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience">
     <h2>Experience</h2>
-    <p>Include your work and internship experiences here.</p>
+    <div class="single-card">
+      <p>Include your work and internship experiences here.</p>
+    </div>
   </section>
 
   <!-- Hobbies Section -->
   <section id="hobbies">
     <h2>Hobbies & Interests</h2>
-    <p>Include your hobbies and interests here.</p>
+    <div class="single-card">
+      <ul>
+        <li>Coding personal projects</li>
+        <li>Exploring AI & Robotics</li>
+        <li>Playing Chess</li>
+        <li>Reading Tech Blogs</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="single-card">
+      <p>📧 swastik2000saha@gmail.com</p>
+      <p>📱 +91 6289875500</p>
+      <p>🌐 https://portfolio-roan-two-35.vercel.app/</p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Swastik Saha. All rights reserved.</p>
+    <p>© 2025 Swastik Saha. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JS for Hamburger -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>
