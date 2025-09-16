@@ -26,101 +26,70 @@ const revealOnScroll = () => {
 };
 
 window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-/* Interactive Neural Network Background */
+window.addEventListener("load", revealOnScroll);/* 3D Data Tunnel / Starfield Animation */
 const canvas = document.getElementById("bg-canvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let mouse = {
-  x: null,
-  y: null,
-  radius: 150 // interaction range
-};
+let stars = [];
+const numStars = 500;
+const speed = 0.05;
 
-window.addEventListener("mousemove", e => {
-  mouse.x = e.x;
-  mouse.y = e.y;
-});
-
-class Node {
+class Star {
   constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 3 + 2;
-    this.baseX = this.x;
-    this.baseY = this.y;
-    this.speedX = (Math.random() - 0.5) * 1.2;
-    this.speedY = (Math.random() - 0.5) * 1.2;
+    this.reset();
+  }
+
+  reset() {
+    this.x = (Math.random() - 0.5) * canvas.width;
+    this.y = (Math.random() - 0.5) * canvas.height;
+    this.z = Math.random() * canvas.width;
   }
 
   update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-
-    // bounce at edges
-    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-
-    // interactive mouse effect
-    let dx = mouse.x - this.x;
-    let dy = mouse.y - this.y;
-    let dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < mouse.radius) {
-      this.x -= dx / 20;
-      this.y -= dy / 20;
+    this.z -= speed * canvas.width * 0.02;
+    if (this.z <= 0) {
+      this.reset();
+      this.z = canvas.width;
     }
   }
 
   draw() {
+    let scale = 300 / this.z;
+    let x = canvas.width / 2 + this.x * scale;
+    let y = canvas.height / 2 + this.y * scale;
+
+    if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) {
+      this.reset();
+      return;
+    }
+
+    let size = (1 - this.z / canvas.width) * 3;
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = "#1abc9c"; // neon green
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0, 200, 255, ${1 - this.z / canvas.width})`;
     ctx.fill();
   }
 }
 
-let nodes = [];
 function init() {
-  nodes = [];
-  for (let i = 0; i < 90; i++) {
-    nodes.push(new Node());
-  }
-}
-
-function connectNodes() {
-  for (let a = 0; a < nodes.length; a++) {
-    for (let b = a + 1; b < nodes.length; b++) {
-      let dx = nodes[a].x - nodes[b].x;
-      let dy = nodes[a].y - nodes[b].y;
-      let dist = Math.sqrt(dx * dx + dy * dy);
-
-      if (dist < 140) {
-        let opacity = 1 - dist / 140;
-        if (mouse.x && Math.abs(mouse.x - nodes[a].x) < mouse.radius && Math.abs(mouse.y - nodes[a].y) < mouse.radius) {
-          ctx.strokeStyle = `rgba(26,188,156,${opacity + 0.3})`; // brighter near mouse
-        } else {
-          ctx.strokeStyle = `rgba(26,188,156,${opacity})`;
-        }
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(nodes[a].x, nodes[a].y);
-        ctx.lineTo(nodes[b].x, nodes[b].y);
-        ctx.stroke();
-      }
-    }
+  stars = [];
+  for (let i = 0; i < numStars; i++) {
+    stars.push(new Star());
   }
 }
 
 function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  nodes.forEach(node => {
-    node.update();
-    node.draw();
-  });
-  connectNodes();
+  ctx.fillStyle = "rgba(5, 8, 15, 0.5)"; // subtle trail effect
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let star of stars) {
+    star.update();
+    star.draw();
+  }
+
   requestAnimationFrame(animate);
 }
 

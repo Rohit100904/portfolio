@@ -332,14 +332,13 @@ footer {
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-}
-/* Background Canvas */
+}/* Futuristic 3D Data Tunnel */
 #bg-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: radial-gradient(circle at center, #05080f 0%, #000 100%);
   z-index: -1;
-  background: #0a0a0a; /* dark technical background */
 }
