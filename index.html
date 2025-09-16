@@ -37,6 +37,9 @@
       <p>GitHub: <a href="https://github.com/Rohit100904" target="_blank">github.com/swastiksaha</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/swastik-saha-76b4a72b8/" target="_blank">linkedin.com/in/swastiksaha</a></p>
     </div>
+
+    <!-- Resume Button -->
+    <a href="resume.pdf" target="_blank" class="resume-btn">📄 Download Resume</a>
   </header>
 
   <!-- Projects Section -->
@@ -91,23 +94,22 @@
   </section>
 
   <section id="experience">
-  <h2>Experience</h2>
-
-  <!-- Experience Card -->
-  <div class="single-card">
-    <h3>AFame Technologies</h3>
-    <p><strong>Role:</strong> Machine Learning Intern</p>
-    <p><strong>Duration:</strong> August 2024 - September 2024</p>
-    <p><strong>Details:</strong> The internship provided hands-on experience in developing and deploying ML models, working on real-world projects, and contributing to the organization’s objectives in a dynamic learning environment</p>
-    <p>
-      <strong>Letter of Recommendation:</strong> 
-      <a href="https://drive.google.com/file/d/1tnCV3S_nkMiY7mII3Jnl-DfdOwlE8yDS/view?usp=drive_link" target="_blank">View LOR</a>
-    </p>
-    <p>
-      <strong>Certificate:</strong> 
-      <a href="https://drive.google.com/file/d/1Rrb_JQfYNOXnbk7S5-ligYDBnIkZwNdk/view?usp=drive_link" target="_blank">View Certificate</a>
-    </p>
-  </div>
+    <h2>Experience</h2>
+    <div class="single-card">
+      <h3>AFame Technologies</h3>
+      <p><strong>Role:</strong> Machine Learning Intern</p>
+      <p><strong>Duration:</strong> August 2024 - September 2024</p>
+      <p><strong>Details:</strong> The internship provided hands-on experience in developing and deploying ML models, working on real-world projects, and contributing to the organization’s objectives in a dynamic learning environment</p>
+      <p>
+        <strong>Letter of Recommendation:</strong> 
+        <a href="https://drive.google.com/file/d/1tnCV3S_nkMiY7mII3Jnl-DfdOwlE8yDS/view?usp=drive_link" target="_blank">View LOR</a>
+      </p>
+      <p>
+        <strong>Certificate:</strong> 
+        <a href="https://drive.google.com/file/d/1Rrb_JQfYNOXnbk7S5-ligYDBnIkZwNdk/view?usp=drive_link" target="_blank">View Certificate</a>
+      </p>
+    </div>
+  </section>
 
   <!-- Hobbies Section -->
   <section id="hobbies">
@@ -127,9 +129,9 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="single-card">
-      <p>📧 <a>swastik2000saha@gmail.com</a></p>
+      <p>📧 <a href="mailto:swastik2000saha@gmail.com">swastik2000saha@gmail.com</a></p>
       <p>📱 +91 6289875500</p>
-      <p>🌐 <a>https://portfolio-roan-two-35.vercel.app/</a></p>
+      <p>🌐 <a href="https://portfolio-roan-two-35.vercel.app/" target="_blank">portfolio-roan-two-35.vercel.app</a></p>
     </div>
   </section>
 
@@ -138,7 +140,7 @@
     <p>© 2025 Swastik Saha. All rights reserved.</p>
   </footer>
 
-  <!-- JS for Hamburger -->
+  <!-- JS for Hamburger & Scroll Animation -->
   <script>
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
@@ -146,6 +148,19 @@
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("active");
     });
+
+    // Scroll Animation
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
   </script>
 
 </body>
