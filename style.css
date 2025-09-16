@@ -253,4 +253,28 @@ footer {
     margin: 4px 0;
   }
 }
+#about p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #ddd;
+}
 
+#about h3 {
+  margin-top: 20px;
+  color: #1abc9c;
+  font-size: 1.3rem;
+}
+
+#about ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
+#about li {
+  margin: 8px 0;
+  padding: 10px;
+  background: #222;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
