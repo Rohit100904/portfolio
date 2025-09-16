@@ -278,3 +278,17 @@ footer {
   border-radius: 6px;
   font-size: 0.95rem;
 }
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1abc9c;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.2) rotate(5deg); /* bigger pop and slight rotation */
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.6); /* stronger shadow on hover */
+}
