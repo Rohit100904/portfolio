@@ -8,6 +8,9 @@
 </head>
 <body>
 
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Swastik Saha</div>
@@ -39,34 +42,33 @@
       <p>LinkedIn: <a href="https://www.linkedin.com/in/swastik-saha-76b4a72b8/" target="_blank">linkedin.com/in/swastiksaha</a></p>
     </div>
 
-
-    <a href="resume.pdf" class="resume-btn" download="Swastik_Saha_Resume.pdf">📄 Download Resume</a>
-
+    <a href="resume.pdf" download class="resume-btn">📄 Download Resume</a>
   </header>
+
   <!-- About Me Section -->
-<section id="about">
-  <div class="single-card">
-    <h2>About Me</h2>
-    <p>
-      I am a Machine Learning enthusiast and Python developer with a keen interest in robotics and automation.  
-      I enjoy building intelligent systems that combine AI, data analysis, and hardware to solve real-world problems.  
-      Always eager to learn and experiment, I focus on creating projects that blend creativity with technology.
-    </p>
+  <section id="about">
+    <div class="single-card">
+      <h2>About Me</h2>
+      <p>
+        I am a Machine Learning enthusiast and Python developer with a keen interest in robotics and automation.  
+        I enjoy building intelligent systems that combine AI, data analysis, and hardware to solve real-world problems.  
+        Always eager to learn and experiment, I focus on creating projects that blend creativity with technology.
+      </p>
 
-    <h3>Education</h3>
-    <ul>
-      <li>B.Tech in Computer Science and Engineering – Meghnad Saha Institute of Technologyy (2022-2026)</li>
-      <li>Higher Secondary – South Point High School</li>
-    </ul>
+      <h3>Education</h3>
+      <ul>
+        <li>B.Tech in Computer Science and Engineering – Meghnad Saha Institute of Technologyy (2022-2026)</li>
+        <li>Higher Secondary – South Point High School</li>
+      </ul>
 
-    <h3>Achievements</h3>
-    <ul>
-      <li>President of the Technical Committee of MSIT (Tenure: 2025-2026)</li>
-      <li>Core Organizing Team of Megatronix (The Official Technical Club of MSIT)</li>
-      <li>Sponsor Head of Megatronix</li>
-    </ul>
-  </div>
-</section>
+      <h3>Achievements</h3>
+      <ul>
+        <li>President of the Technical Committee of MSIT (Tenure: 2025-2026)</li>
+        <li>Core Organizing Team of Megatronix (The Official Technical Club of MSIT)</li>
+        <li>Sponsor Head of Megatronix</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- Projects Section -->
   <section id="projects">
@@ -119,6 +121,7 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="single-card">
@@ -166,28 +169,8 @@
     <p>© 2025 Swastik Saha. All rights reserved.</p>
   </footer>
 
-  <!-- JS for Hamburger & Scroll Animation -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // Scroll Animation
-    const sections = document.querySelectorAll("section");
-    const revealOnScroll = () => {
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          sec.classList.add("visible");
-        }
-      });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-  </script>
+  <!-- JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>
